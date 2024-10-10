@@ -1,6 +1,9 @@
+import React from "react";
 import { FaRegUser } from "react-icons/fa";
 import Logo from "../assets/logo.png";
 import { MdMenu } from "react-icons/md";
+import { motion } from "framer-motion";
+import { UpdateFollower } from "react-mouse-follower";
 
 const NavbarMenu = [
     {
@@ -32,8 +35,12 @@ const NavbarMenu = [
 
 const Navbar = () => {
     return (
-        <div className="bg-orange-500 text-white py-8">
-            <div className="container flex justify-between items-center">
+        <div className="text-white py-8">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="container flex justify-between items-center">
                 {/* logo section */}
                 <div>
                     <img className="max-w-[100px] invert" src={Logo} alt="" />
@@ -44,19 +51,38 @@ const Navbar = () => {
                         {
                             NavbarMenu.map((item) => (
                                 <li>
-                                    <a className="inline-block text-base font-semibold py-2 px-3 uppercase" href={item.link}>{item.title}</a>
+                                    <UpdateFollower
+                                        mouseOptions={{
+                                            backgroundColor: "white",
+                                            zIndex: 9999,
+                                            followSpeed: 1.5,
+                                            scale: 5,
+                                            mixBlendMode: "difference",
+                                        }}
+                                    >
+                                        <a className="inline-block text-base font-semibold py-2 px-3 uppercase" href={item.link}>{item.title}</a>
+                                    </UpdateFollower>
                                 </li>
                             ))}
-                        <button className="text-xl ps-14">
-                            <FaRegUser></FaRegUser>
-                        </button>
+                        <UpdateFollower mouseOptions={{
+                            backgroundColor: "white",
+                            zIndex: 9999,
+                            followSpeed: 1.5,
+                            scale: 5,
+                            mixBlendMode: "difference",
+                        }}>
+                            <button className="text-xl ps-14">
+                                <FaRegUser></FaRegUser>
+                            </button>
+                        </UpdateFollower>
+
                     </ul>
                 </div>
                 {/* Hamburger Icon */}
                 <div className="md:hidden">
                     <MdMenu className="text-4xl"></MdMenu>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

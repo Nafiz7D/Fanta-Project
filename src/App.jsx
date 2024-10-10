@@ -1,11 +1,20 @@
+import { UpdateFollower } from "react-mouse-follower"
 import Hero from "./components/Hero"
-import Navbar from "./components/Navbar"
+
+
 
 const App = () => {
   return (
     <main className="overflow-x-hidden">
-      <Navbar></Navbar>
-      <Hero></Hero>
+      <UpdateFollower
+        mouseOptions={{
+          backgroundColor: "white",
+          zIndex: 10,
+          followSpeed: 1.5,
+        }}
+      >
+        <Hero></Hero>
+      </UpdateFollower>
     </main>
   )
 }
