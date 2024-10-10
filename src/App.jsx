@@ -1,5 +1,6 @@
 import { UpdateFollower } from "react-mouse-follower"
 import Hero from "./components/Hero"
+import Products from "./components/Products/Products"
 
 
 
@@ -14,6 +15,7 @@ const App = () => {
         }}
       >
         <Hero></Hero>
+        <Products></Products>
       </UpdateFollower>
     </main>
   )
