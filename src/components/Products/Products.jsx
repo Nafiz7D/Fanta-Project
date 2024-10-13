@@ -20,7 +20,7 @@ export const fadeUp = (delay) => {
     };
 };
 
-const ProductsData = [
+export const ProductsData = [
     {
         id: 1,
         title: "Orange Fanta",
