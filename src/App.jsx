@@ -4,6 +4,7 @@ import Products from "./components/Products/Products"
 import Banner from "./components/Banner/Banner"
 import BannerText from "./components/Banner/BannerText"
 import Blogs from "./components/Blogs/Blogs"
+import FAQ from "./components/FAQ/FAQ"
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
         <Banner></Banner>
         <BannerText></BannerText>
         <Blogs></Blogs>
+        <FAQ></FAQ>
       </UpdateFollower>
     </main>
   )
