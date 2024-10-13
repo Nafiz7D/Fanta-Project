@@ -36,20 +36,32 @@ const BlogsData = [
 ]
 const Blogs = () => {
     return (
-        <section>
-            <div className="container">
+        <section className="bg-gray-50">
+            <div className="container py-14">
                 <h1 className="text-3xl font-bold text-center pb-8">Blogs</h1>
                 {/* carrd section */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {
                         BlogsData.map((item) => (
-                            <div className="flex  flex-col items-center justify-center gap-6 p-5 ax-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:translate-y-2 duration-300" key={item.id}>
-                                <img className="rounded-md" src={item.img} alt="" />
-                                <div className="space-y-2">
-                                    <h1 className="text-xl font-bold line-clamp-2">{item.title}</h1>
-                                    <p>{item.desc}</p>
+                            <UpdateFollower
+                                mouseOptions={{
+                                    backgroundColor: "black",
+                                    zIndex: 999,
+                                    followSpeed: 1.5,
+                                    text: "red",
+                                    textFontSize: "3px",
+                                    scale: 5,
+                                }}
+                            >
+                                <div className="flex  flex-col items-center justify-center gap-6 p-2 md:p-5 ax-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:translate-y-2 duration-300" key={item.id}>
+                                    <img className="rounded-md" src={item.img} alt="" />
+                                    <div className="space-y-2">
+                                        <h1 className="text-xl font-bold line-clamp-2">{item.title}</h1>
+                                        <p>{item.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </UpdateFollower>
+
                         ))
                     }
                 </div>
